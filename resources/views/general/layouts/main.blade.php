@@ -187,19 +187,5 @@
     };
 </script>
 
-<script>
-    var botmanWidget = {
-        title: "Ariga Chat Bot",
-        aboutText: 'Tulis sesuatu',
-        mainColor: '#164E63',
-        aboutText: '',
-        bubbleBackground: '#164E63',
-        headerTextColor: '#fff',
-        introMessage: "✋ Hi! selamat datang di website Ariga Nursing Management"
-
-    };
-</script>
-
-<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 
 </html>
