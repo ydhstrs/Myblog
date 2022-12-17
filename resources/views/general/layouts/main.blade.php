@@ -25,38 +25,7 @@
                         <span class="font-light text-xs text-green-600">Esther Simatupang</span>
                     </div>
                 </div>
-                @if (Route::has('login'))
-                    @auth
-                        <div class="lg:pl-[450px]">
 
-                            <button id="profilenav" type="button" class="block">
-                                <span
-                                    class="text-base text-black py-2 mx-8 hover:text-cyan-900">{{ Auth::user()->nickname }}</span>
-                            </button>
-                            <nav id="nav-profile"
-                                class="hidden absolute py-5 lg:mr-80 md:mr-36 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full ">
-                                <ul class="block">
-                    
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <li class="group">
-                                            <a href="href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); this.closest('form').submit();""
-                                                class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Log Out</a>
-                                        </li>
-                                    </form>
-                                </ul>
-                            </nav>
-                        </div>
-                    @else
-                        <div class="lg:pl-[600px]">
-
-                            <a href="{{ route('login') }}"
-                                class="text-base text-black py-2 mx-8 hover:text-cyan-900">Login</a>
-                        </div>
-
-                    @endauth
-                @endif
 
                 <div class="flex items-center right-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-6 lg:hidden">
@@ -66,6 +35,54 @@
                     </button>
                     <nav id="nav-menu"
                         class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+
+                        <ul class="block lg:flex">
+                            @if (Route::has('login'))
+                                @auth
+                                    <div class="lg:pl-[450px]">
+
+                                        <button id="profilenav" type="button" class="block">
+                                            <span
+                                                class="text-base text-black py-2 mx-8 hover:text-cyan-900">{{ Auth::user()->nickname }}</span>
+                                        </button>
+                                        <nav id="nav-profile"
+                                            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full ">
+                                            <ul class="block">
+                                                <li class="group">
+                                                    <a href="/dashboard"
+                                                        class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Dashboard</a>
+                                                </li>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+
+                                                    <li class="group">
+                                                        <a href="href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault(); this.closest('form').submit();""
+                                                            class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Log
+                                                            Out</a>
+                                                    </li>
+                                                </form>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                @else
+                                    <div class="lg:pl-[600px]">
+
+                                        <a href="{{ route('login') }}"
+                                            class="text-base text-black py-2 mx-8 hover:text-cyan-900">Login</a>
+                                    </div>
+
+                                @endauth
+                            @endif
+                            <li class="group">
+                                <a href="/"
+                                    class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Beranda</a>
+                            </li>
+                            <li class="group">
+                                <a href="/about"
+                                    class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </div>
@@ -85,10 +102,10 @@
                             Thank you for your attention.
                         </p>
                         <p class=" font-light text-white">
-Esther Simatupang <br>
-NIM 217046017 <br>
-Mahasiswa Magister Ilmu Keperawatan- Fakultas Keperawatan.<br>
-Universitas Sumatera Utara
+                            Esther Simatupang <br>
+                            NIM 217046017 <br>
+                            Mahasiswa Magister Ilmu Keperawatan- Fakultas Keperawatan.<br>
+                            Universitas Sumatera Utara
                         </p>
                     </div>
                     <div class="col-span-2 sm:col-span-1 sm:my-auto  transition-all duration-500">
@@ -97,7 +114,8 @@ Universitas Sumatera Utara
                                 <a target="blank"
                                     href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=yudhatriya07@gmail.com"
                                     class="flex items-center gap-2 text-white">
-                                    <ion-icon class="text-xl" name="mail-outline"></ion-icon>esthersimatupang@gmail.com
+                                    <ion-icon class="text-xl" name="mail-outline"></ion-icon>
+                                    rakyatbiasanasional@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -178,7 +196,7 @@ Universitas Sumatera Utara
         bubbleBackground: '#164E63',
         headerTextColor: '#fff',
         introMessage: "✋ Hi! selamat datang di website Ariga Nursing Management"
-        
+
     };
 </script>
 
